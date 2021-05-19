@@ -1,0 +1,32 @@
+{
+  "name": "ecommerce-projects",
+  "version": "1.0.0",
+  "description": "bike ecommerce shop ",
+  "main": "server.js",
+  "type": "module",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "concurrently": "^5.3.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.7",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node bikeshop-backend/server",
+    "server": "nodemon bikeshop-backend/server.js",
+    "client": "npm start --prefix bikeshop",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node bikeshop-backend/seeder",
+    "data:destroy": "node bikeshop-backend/seeder -d",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix bikeshop && npm run build --prefix bikeshop"
+  },
+  "author": "Martin Oputa",
+  "license": "ISC"
+}
